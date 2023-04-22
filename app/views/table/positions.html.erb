@@ -39,7 +39,14 @@
   <div class="position-absolute bottom-0 end-0">I</div>
 </div> %>
 
-<div class="center-container">
-  <div class="x-axis">あああ</div>
-  <div class="y-axis">いいい</div>
+<div class="grid-container">
+  <% (-50..50).each do |y| %>
+    <div class="grid-row">
+      <% (-50..50).each do |x| %>
+        <div class="grid-item" data-x="<%= x %>" data-y="<%= y %>">
+          <%= "(#{x}, #{y})" if y == 50 || x == -50 %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
